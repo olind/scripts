@@ -62,7 +62,7 @@ $<^>!c::\
 ;I'm remapping CapsLock and LShift in hardware. Then swapping CapsLock and 
 ;Escape in software. No really good reason for why.
 $Capslock::Escape
-$Escape::Capslock
+;$Escape::Capslock
 
 #IfWinActive .* - Microsoft Visual C# *.
 	^LButton::Send {click}{f1} 				;Remap Ctrl + click to F12 in Visual Studio http://stackoverflow.com/questions/80857/in-visual-studio-2008-how-can-i-make-controlclick-do-a-go-to-definition
