@@ -71,6 +71,10 @@ $Capslock::Escape
 	^LButton::Send {click}{f1} 				;Remap Ctrl + click to F12 in Visual Studio http://stackoverflow.com/questions/80857/in-visual-studio-2008-how-can-i-make-controlclick-do-a-go-to-definition
 #IfWinActive
 
+;Raises / lowers the volume with Alt+down / up -arrow
+!Up::Send {Volume_Up 3}
+!Down::Send {Volume_Down 3}
+
 <^>!F1::
 	Suspend, Permit
 	Suspend, toggle
