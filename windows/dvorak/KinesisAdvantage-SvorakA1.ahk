@@ -7,11 +7,11 @@ Menu, Tray, Icon, dvorak-icon-on.ico
 menu, tray, tip, AutoHotkey script for the Swedish Dvorak layout A1. Optimized for the Kinesis Advantage keyboard.
 Process, Priority, , High
 
-;´1234567890+
+;Â´1234567890+
 
-$q::å
-$w::ä
-$e::ö
+$q::Ã¥
+$w::Ã¤
+$e::Ã¶
 $r::p
 $t::y
 $y::f
@@ -30,8 +30,8 @@ $h::d
 $j::h
 $k::t
 $l::n
-$ö::s
-$ä::-
+$Ã¶::s
+$Ã¤::-
 
 $z::.
 $x::q
@@ -44,15 +44,15 @@ $,::w
 $.::v
 $-::z
 
-;$§
+;$Â§
 ;$<
-$å::,
-;$¨
+$Ã¥::,
+;$Â¨
 
 $<^>!w::@
-$<^>!e::£
+$<^>!e::Â£
 $<^>!r::$
-$<^>!t::€
+$<^>!t::â‚¬
 $<^>!a::[
 $<^>!s::]
 $<^>!d::SendInput, {{} ; No idea why; without SendInput I can't get it to work
@@ -63,6 +63,9 @@ $<^>!c::\
 ;Escape in software. No really good reason for why.
 $Capslock::Escape
 ;$Escape::Capslock
+
+;The Kinesis keyboard doesnt have any Windows button so I open the Start menu by clicking Alt + Space. Thanks http://stackoverflow.com/users/396761/skajfes for helping me out
+!Space::Send ^{Esc}
 
 #IfWinActive .* - Microsoft Visual C# *.
 	^LButton::Send {click}{f1} 				;Remap Ctrl + click to F12 in Visual Studio http://stackoverflow.com/questions/80857/in-visual-studio-2008-how-can-i-make-controlclick-do-a-go-to-definition
