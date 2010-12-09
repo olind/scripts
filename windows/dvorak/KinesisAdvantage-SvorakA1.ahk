@@ -77,6 +77,7 @@ $Capslock::Escape
 
 ;Make explorer understand that Ctrl+L means goto location bar. Not sure if this works on other systems than Win7.
 ;Note that I remapped my p key to a l above. Tricky!
+;Thanks to Natan (http://stackoverflow.com/users/399543/nathan) & the Talisman at the AHK IRC channel for help
 #IfWinActive ahk_class CabinetWClass
 	^p::Send {F4}
 #IfWinActive
