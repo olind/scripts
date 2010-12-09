@@ -75,6 +75,9 @@ $Capslock::Escape
 !Up::Send {Volume_Up 3}
 !Down::Send {Volume_Down 3}
 
+;Make explorer understand that Ctrl+L means goto location bar
+^l::Send {F4}
+
 <^>!F1::
 	Suspend, Permit
 	Suspend, toggle
