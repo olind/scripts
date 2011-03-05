@@ -3,6 +3,9 @@
 
 SendMode Input
 #NoEnv
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+SetTitleMatchMode 2
+
 Menu, Tray, Icon, dvorak-icon-on.ico
 menu, tray, tip, AutoHotkey script for the Swedish Dvorak layout A1. Optimized for the Kinesis Advantage keyboard.
 Process, Priority, , High
@@ -59,6 +62,7 @@ $<^>!d::SendInput, {{} ; No idea why; without SendInput I can't get it to work
 $<^>!f::SendInput, {}}
 $<^>!x::~
 $<^>!c::\
+
 ;I'm remapping CapsLock and LShift in hardware. Then swapping CapsLock and 
 ;Escape in software. No really good reason for why.
 $Capslock::Escape
@@ -67,8 +71,9 @@ $Capslock::Escape
 ;The Kinesis keyboard doesnt have any Windows button so I open the Start menu by clicking Alt + Space. Thanks http://stackoverflow.com/users/396761/skajfes for helping me out
 !Space::Send ^{Esc}
 
-#IfWinActive .* - Microsoft Visual C# *.
-	^LButton::Send {click}{f1} 				;Remap Ctrl + click to F12 in Visual Studio http://stackoverflow.com/questions/80857/in-visual-studio-2008-how-can-i-make-controlclick-do-a-go-to-definition
+;Remap Ctrl + click to F12 in Visual Studio http://stackoverflow.com/questions/80857/in-visual-studio-2008-how-can-i-make-controlclick-do-a-go-to-definition
+#IfWinActive Visual C#
+	^LButton::Send {click}{f12}
 #IfWinActive
 
 ;Raises / lowers the volume with Alt+down / up -arrow
@@ -86,10 +91,3 @@ $Capslock::Escape
 	Suspend, Permit
 	Suspend, toggle
 return
-
-; -----------------------------------------------------------------------------
-; Ideas for improvement
-; * Use Capslock with a shift modifyer (+Capslock) and use Capslock for something else
-; * VS: Remap Shift+Alt+F10 to Alt+Enter in VS to mimic ReSharpers add missing reference feature
-; * VS: Use ugly open definition on AltGr + F (<^>!f::Ctrl+7+">of") See: http://www.alteridem.net/2007/09/11/quickly-findopen-a-file-in-visual-studio/
-; * Check if it is better to use #UseHook / $ (currently only using it on Caps-Shift remapping)
