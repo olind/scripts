@@ -21,16 +21,16 @@ SetTitleMatchMode 2
 ;$LCtrl::Capslock
 
 ;The Kinesis keyboard doesnt have any Windows button so I open the Start menu by clicking Alt + Space. Thanks http://stackoverflow.com/users/396761/skajfes for helping me out
-!Space::Send ^{Esc}
+;!Space::Send ^{Esc}
 
 ;Remap Ctrl + click to F12 in Visual Studio http://stackoverflow.com/questions/80857/in-visual-studio-2008-how-can-i-make-controlclick-do-a-go-to-definition
-#IfWinActive Visual C#
-	^LButton::Send {click}{f12}
-#IfWinActive
+;#IfWinActive Visual C#
+;	^LButton::Send {click}{f12}
+;#IfWinActive
 
 ;Raises / lowers the volume with Alt+down / up -arrow
-!Up::Send {Volume_Up 3}
-!Down::Send {Volume_Down 3}
+;!Up::Send {Volume_Up 3}
+;!Down::Send {Volume_Down 3}
 
 ;Make explorer understand that Ctrl+L means goto location bar. Not sure if this works on other systems than Win7.
 ;Note that I remapped my p key to a l above. Tricky!
@@ -43,6 +43,14 @@ SetTitleMatchMode 2
 	Suspend, Permit
 	Suspend, toggle
 return
+
+WheelUp::
+Send {WheelDown}
+Return
+
+WheelDown::
+Send {WheelUp}
+Return
 
 ; ---------------------------------------------------------------------------
 ; SVORAK KEYBOARD REMAPPING
