@@ -1,6 +1,8 @@
 #!/bin/bash
 
-rsync -PzrlptgD --del --delete-excluded -r --rsync-path=~/bin/rsync godaddy:~/ /Users/Ola/Backup/godaddy/
+rsync -PzrlptgD --del --delete-excluded -r fsdata:~/www/ /Users/Ola/Backup/fsdata/www
+
+#--rsync-path=~/bin/rsync fsdata:~/t/ /Users/Ola/TMP/fsdata/
 
 #---
 
