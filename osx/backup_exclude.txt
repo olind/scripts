@@ -1,0 +1,6 @@
+.DocumentRevisions-V100*
+.Spotlight*
+.DS_Store
+.Trash*
+Thumbs.db
+.fseventsd
